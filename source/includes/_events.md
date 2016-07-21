@@ -67,7 +67,7 @@ This endpoint retrieves all events for a given company.
 curl "http://www.eventelf.com/api/company/1/events/upcoming" -H "Authorization: API_TOKEN"
 ```
 
-> The above command would return JSON identical to the 'All Events' endpoint
+> The above command would return JSON identical in structure to the 'All Events' endpoint
 
 This endpoint retrieves all upcoming events for a given company.
 
@@ -81,7 +81,7 @@ This endpoint retrieves all upcoming events for a given company.
 curl "http://www.eventelf.com/api/company/1/events/past" -H "Authorization: API_TOKEN"
 ```
 
-> The above command would return JSON identical to the 'All Events' endpoint
+> The above command would return JSON identical in structure to the 'All Events' endpoint
 
 This endpoint retrieves all past events for a given company.
 
