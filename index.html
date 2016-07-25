@@ -138,58 +138,85 @@ curl <span class="s2">"http://www.eventelf.com/api/API_ENDPOINT"</span> -H <span
 You must replace <code>API_TOKEN</code> with your company&rsquo;s API token.
 </aside>
 
-          <h1 id="events">Events</h1>
+          <h1 id="company">Company</h1>
 
-<h2 id="all-events">All Events</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"http://www.eventelf.com/api/company/1/events"</span> -H <span class="s2">"Authorization: API_TOKEN"</span>
+<h2 id="single-company">Single Company</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"http://www.eventelf.com/api/companies/1"</span> -H <span class="s2">"Authorization: API_TOKEN"</span>
 </code></pre>
 
 <blockquote>
 <p>The above command would return the following JSON:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tulsa Run"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"location_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Downtown Tulsa"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6th &amp; Boston Ave."</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tulsa"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"74120"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"starts_on_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"February 6, 2015"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"ends_on_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"February 8, 2015"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"date_range"</span><span class="p">:</span><span class="w"> </span><span class="s2">"February 6, 2015 - February 8, 2015"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"currency_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://eventelf.dev/events/1/login"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"time_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Central Time (US &amp; Canada)"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-18T12:01:24.516-05:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-12T10:42:31.196-06:00"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event Elf Run"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"location_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event Elf Headquarters"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234 S. Main St."</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tulsa"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"74120"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"starts_on_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"April 26, 2015"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"ends_on_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"April 26, 2015"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"date_range"</span><span class="p">:</span><span class="w"> </span><span class="s2">"April 26, 2015"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"currency_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://eventelf.dev/events/2/login"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"time_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Central Time (US &amp; Canada)"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-10T10:58:50.352-05:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-10T10:58:50.352-05:00"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Medio"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"company_time_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Central Time (US &amp; Canada)"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"support_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"support@newmediotesting.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"support_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9184441234"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"notification_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notifications@newmediotesting.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves the details for a given company.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://eventelf.com/api/companies/COMPANY_ID</code></p>
+
+          <h1 id="events">Events</h1>
+
+<h2 id="all-events">All Events</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"http://www.eventelf.com/api/companies/1/events"</span> -H <span class="s2">"Authorization: API_TOKEN"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command would return the following JSON:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tulsa Run"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"location_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Downtown Tulsa"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6th &amp; Boston Ave."</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tulsa"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"74120"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"starts_on_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"February 6, 2015"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"ends_on_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"February 8, 2015"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"date_range"</span><span class="p">:</span><span class="w"> </span><span class="s2">"February 6, 2015 - February 8, 2015"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"currency_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://eventelf.dev/events/1/login"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"time_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Central Time (US &amp; Canada)"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-18T12:01:24.516-05:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-12T10:42:31.196-06:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event Elf Fun Run"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"location_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event Elf Headquarters"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234 S. Main St."</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tulsa"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"74120"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"starts_on_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"April 26, 2015"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"ends_on_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"April 26, 2015"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"date_range"</span><span class="p">:</span><span class="w"> </span><span class="s2">"April 26, 2015"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"currency_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://eventelf.dev/events/2/login"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"time_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Central Time (US &amp; Canada)"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-10T10:58:50.352-05:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-10T10:58:50.352-05:00"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -197,10 +224,10 @@ You must replace <code>API_TOKEN</code> with your company&rsquo;s API token.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://eventelf.com/api/company/COMPANY_ID/events</code></p>
+<p><code class="prettyprint">GET http://eventelf.com/api/companies/COMPANY_ID/events</code></p>
 
 <h2 id="upcoming-events">Upcoming Events</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"http://www.eventelf.com/api/company/1/events/upcoming"</span> -H <span class="s2">"Authorization: API_TOKEN"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"http://www.eventelf.com/api/companies/1/events/upcoming"</span> -H <span class="s2">"Authorization: API_TOKEN"</span>
 </code></pre>
 
 <blockquote>
@@ -211,10 +238,10 @@ You must replace <code>API_TOKEN</code> with your company&rsquo;s API token.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://eventelf.com/api/company/COMPANY_ID/events/upcoming</code></p>
+<p><code class="prettyprint">GET http://eventelf.com/api/companies/COMPANY_ID/events/upcoming</code></p>
 
 <h2 id="past-events">Past Events</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"http://www.eventelf.com/api/company/1/events/past"</span> -H <span class="s2">"Authorization: API_TOKEN"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"http://www.eventelf.com/api/companies/1/events/past"</span> -H <span class="s2">"Authorization: API_TOKEN"</span>
 </code></pre>
 
 <blockquote>
@@ -225,7 +252,88 @@ You must replace <code>API_TOKEN</code> with your company&rsquo;s API token.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://eventelf.com/api/company/COMPANY_ID/events/past</code></p>
+<p><code class="prettyprint">GET http://eventelf.com/api/companies/COMPANY_ID/events/past</code></p>
+
+<h2 id="single-event">Single Event</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"http://www.eventelf.com/api/companies/1/events/231"</span> -H <span class="s2">"Authorization: API_TOKEN"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command would return the following JSON:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">94</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toddlers Ticketing Event 2015"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec eleifend purus, eu luctus leo. Fusce dapibus tincidunt est, quis bibendum erat consequat ac. Nam laoreet velit eget felis venenatis mollis. Suspendisse potenti. Ut eu ultrices dui."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"restrictions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec eleifend purus, eu luctus leo. Fusce dapibus tincidunt est, quis bibendum erat consequat ac. Nam laoreet velit eget felis venenatis mollis. Suspendisse potenti. Ut eu ultrices dui."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"disclaimer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec eleifend purus, eu luctus leo. Fusce dapibus tincidunt est, quis bibendum erat consequat ac. Nam laoreet velit eget felis venenatis mollis. Suspendisse potenti. Ut eu ultrices dui."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"divisions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Day 1"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"starts_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-12-16"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"registration_activities"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nt">"ticketed_activities"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Private Shindig"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum in nulla quis tincidunt. Donec dictum egestas dapibus. Duis sit amet leo lectus. Phasellus cursus erat id turpis hendrerit, et ultrices nibh consectetur."</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"expires_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-31T17:30:00.000-06:00"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"total_spots"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"num_spots_purchased"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"num_spots_left"</span><span class="p">:</span><span class="w"> </span><span class="mi">197</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"spots_remaining_threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"all_access"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"private"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54.0"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"dated_prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.0"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"valid_until"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-06-22T23:59:00.000-05:00"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wave 1"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec eleifend purus, eu luctus leo. Fusce dapibus tincidunt est, quis bibendum erat consequat ac. Nam laoreet velit eget felis venenatis mollis. Suspendisse potenti. Ut eu ultrices dui."</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"expires_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-12-16T17:00:00.000-06:00"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"total_spots"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"num_spots_purchased"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"num_spots_left"</span><span class="p">:</span><span class="w"> </span><span class="mi">194</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"spots_remaining_threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"all_access"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"private"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25.0"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"dated_prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50.0"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"valid_until"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-05-18T23:59:00.000-05:00"</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.0"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"valid_until"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-06-21T23:59:00.000-05:00"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves the details of a given event including ticketed and non-ticketed activity information. If any activities have dated pricing information, it will be returned also.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://eventelf.com/api/companies/COMPANY_ID/events/EVENT_ID</code></p>
 
       </div>
       <div class="dark-box">
