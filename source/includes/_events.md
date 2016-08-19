@@ -3,7 +3,7 @@
 ## All Events
 
 ```shell
-curl "http://www.eventelf.com/api/companies/1/events" -H "Authorization: API_TOKEN"
+curl "http://www.eventelf.com/api/companies/1/events" -H "Authorization: Token token=API_TOKEN"
 ```
 
 > The above command would return the following JSON:
@@ -30,7 +30,6 @@ curl "http://www.eventelf.com/api/companies/1/events" -H "Authorization: API_TOK
 			"currency": "USD",
 			"currency_symbol": "$",
 			"url": "http://eventelf.dev/events/1/login",
-			"sponsor_image_url": null,
 			"time_zone": "Central Time (US & Canada)",
 			"created_at": "2014-09-18T12:01:24.516-05:00",
 			"updated_at": "2014-11-12T10:42:31.196-06:00"
@@ -54,7 +53,6 @@ curl "http://www.eventelf.com/api/companies/1/events" -H "Authorization: API_TOK
 			"currency": "USD",
 			"currency_symbol": "$",
 			"url": "http://eventelf.dev/events/2/login",
-			"sponsor_image_url": "https://d1mapbwzxiat0v.cloudfront.net/attachments/5459cfa9338e3560290cc22a29f252dd33a8e180/store/482d64cd2d71b7c71c8ee601bdd9e76ca840aacd04a5ef2b4fd2f733e50b/logo.jpg",
 			"time_zone": "Central Time (US & Canada)",
 			"created_at": "2015-03-10T10:58:50.352-05:00",
 			"updated_at": "2015-03-10T10:58:50.352-05:00"
@@ -72,7 +70,7 @@ This endpoint retrieves all events for a given company.
 ## Upcoming Events
 
 ```shell
-curl "http://www.eventelf.com/api/companies/1/events/upcoming" -H "Authorization: API_TOKEN"
+curl "http://www.eventelf.com/api/companies/1/events/upcoming" -H "Authorization: Token token=API_TOKEN"
 ```
 
 > The above command would return JSON identical in structure to the 'All Events' endpoint
@@ -86,7 +84,7 @@ This endpoint retrieves all upcoming events for a given company.
 ## Past Events
 
 ```shell
-curl "http://www.eventelf.com/api/companies/1/events/past" -H "Authorization: API_TOKEN"
+curl "http://www.eventelf.com/api/companies/1/events/past" -H "Authorization: Token token=API_TOKEN"
 ```
 
 > The above command would return JSON identical in structure to the 'All Events' endpoint
@@ -100,7 +98,7 @@ This endpoint retrieves all past events for a given company.
 ## Single Event
 
 ```shell
-curl "http://www.eventelf.com/api/companies/1/events/231" -H "Authorization: API_TOKEN"
+curl "http://www.eventelf.com/api/companies/1/events/231" -H "Authorization: Token token=API_TOKEN"
 ```
 
 > The above command would return the following JSON:
@@ -113,6 +111,7 @@ curl "http://www.eventelf.com/api/companies/1/events/231" -H "Authorization: API
 	"restrictions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec eleifend purus, eu luctus leo. Fusce dapibus tincidunt est, quis bibendum erat consequat ac. Nam laoreet velit eget felis venenatis mollis. Suspendisse potenti. Ut eu ultrices dui.",
 	"disclaimer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec eleifend purus, eu luctus leo. Fusce dapibus tincidunt est, quis bibendum erat consequat ac. Nam laoreet velit eget felis venenatis mollis. Suspendisse potenti. Ut eu ultrices dui.",
 	"active": true,
+	"sponsor_image_url": "/attachments/5459cfa9338e3560290cc22a29f252dd33a8e180/store/482d64cd2d71b7c71c8ee601bdd9e76ca840aacd04a5ef2b4fd2f733e50b/testlogo.jpg",
 	"divisions": [
 		{
 			"id": 95,

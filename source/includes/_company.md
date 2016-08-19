@@ -3,7 +3,7 @@
 ## Single Company
 
 ```shell
-curl "http://www.eventelf.com/api/companies/1" -H "Authorization: API_TOKEN"
+curl "http://www.eventelf.com/api/companies/1" -H "Authorization: Token token=API_TOKEN"
 ```
 
 > The above command would return the following JSON:
