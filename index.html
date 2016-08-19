@@ -125,14 +125,14 @@
 
 <h1 id="authentication">Authentication</h1>
 <pre class="highlight shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"http://www.eventelf.com/api/API_ENDPOINT"</span> -H <span class="s2">"Authorization: API_TOKEN"</span>
+curl <span class="s2">"http://www.eventelf.com/api/API_ENDPOINT"</span> -H <span class="s2">"Authorization: Token token=API_TOKEN"</span>
 </code></pre>
 
 <p>Event Elf uses API keys to allow access to the API. You can access your API token in the <a href="http://www.eventelf.com/admin">administration area</a>.</p>
 
 <p>Event Elf expects for the API token to be included in all API requests to the server in a header that looks like the following:</p>
 
-<p><code class="prettyprint">Authorization: API_TOKEN</code></p>
+<p><code class="prettyprint">Authorization: Token token=API_TOKEN</code></p>
 
 <aside class="notice">
 You must replace <code>API_TOKEN</code> with your company&rsquo;s API token.
@@ -141,7 +141,7 @@ You must replace <code>API_TOKEN</code> with your company&rsquo;s API token.
           <h1 id="company">Company</h1>
 
 <h2 id="single-company">Single Company</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"http://www.eventelf.com/api/companies/1"</span> -H <span class="s2">"Authorization: API_TOKEN"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"http://www.eventelf.com/api/companies/1"</span> -H <span class="s2">"Authorization: Token token=API_TOKEN"</span>
 </code></pre>
 
 <blockquote>
@@ -166,7 +166,7 @@ You must replace <code>API_TOKEN</code> with your company&rsquo;s API token.
           <h1 id="events">Events</h1>
 
 <h2 id="all-events">All Events</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"http://www.eventelf.com/api/companies/1/events"</span> -H <span class="s2">"Authorization: API_TOKEN"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"http://www.eventelf.com/api/companies/1/events"</span> -H <span class="s2">"Authorization: Token token=API_TOKEN"</span>
 </code></pre>
 
 <blockquote>
@@ -193,7 +193,6 @@ You must replace <code>API_TOKEN</code> with your company&rsquo;s API token.
             </span><span class="nt">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
             </span><span class="nt">"currency_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$"</span><span class="p">,</span><span class="w">
             </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://eventelf.dev/events/1/login"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"sponsor_image_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="nt">"time_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Central Time (US &amp; Canada)"</span><span class="p">,</span><span class="w">
             </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-18T12:01:24.516-05:00"</span><span class="p">,</span><span class="w">
             </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-11-12T10:42:31.196-06:00"</span><span class="w">
@@ -217,7 +216,6 @@ You must replace <code>API_TOKEN</code> with your company&rsquo;s API token.
             </span><span class="nt">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
             </span><span class="nt">"currency_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$"</span><span class="p">,</span><span class="w">
             </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://eventelf.dev/events/2/login"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"sponsor_image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d1mapbwzxiat0v.cloudfront.net/attachments/5459cfa9338e3560290cc22a29f252dd33a8e180/store/482d64cd2d71b7c71c8ee601bdd9e76ca840aacd04a5ef2b4fd2f733e50b/logo.jpg"</span><span class="p">,</span><span class="w">
             </span><span class="nt">"time_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Central Time (US &amp; Canada)"</span><span class="p">,</span><span class="w">
             </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-10T10:58:50.352-05:00"</span><span class="p">,</span><span class="w">
             </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-10T10:58:50.352-05:00"</span><span class="w">
@@ -233,7 +231,7 @@ You must replace <code>API_TOKEN</code> with your company&rsquo;s API token.
 <p><code class="prettyprint">GET http://eventelf.com/api/companies/COMPANY_ID/events</code></p>
 
 <h2 id="upcoming-events">Upcoming Events</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"http://www.eventelf.com/api/companies/1/events/upcoming"</span> -H <span class="s2">"Authorization: API_TOKEN"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"http://www.eventelf.com/api/companies/1/events/upcoming"</span> -H <span class="s2">"Authorization: Token token=API_TOKEN"</span>
 </code></pre>
 
 <blockquote>
@@ -247,7 +245,7 @@ You must replace <code>API_TOKEN</code> with your company&rsquo;s API token.
 <p><code class="prettyprint">GET http://eventelf.com/api/companies/COMPANY_ID/events/upcoming</code></p>
 
 <h2 id="past-events">Past Events</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"http://www.eventelf.com/api/companies/1/events/past"</span> -H <span class="s2">"Authorization: API_TOKEN"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"http://www.eventelf.com/api/companies/1/events/past"</span> -H <span class="s2">"Authorization: Token token=API_TOKEN"</span>
 </code></pre>
 
 <blockquote>
@@ -261,7 +259,7 @@ You must replace <code>API_TOKEN</code> with your company&rsquo;s API token.
 <p><code class="prettyprint">GET http://eventelf.com/api/companies/COMPANY_ID/events/past</code></p>
 
 <h2 id="single-event">Single Event</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"http://www.eventelf.com/api/companies/1/events/231"</span> -H <span class="s2">"Authorization: API_TOKEN"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"http://www.eventelf.com/api/companies/1/events/231"</span> -H <span class="s2">"Authorization: Token token=API_TOKEN"</span>
 </code></pre>
 
 <blockquote>
@@ -274,6 +272,7 @@ You must replace <code>API_TOKEN</code> with your company&rsquo;s API token.
     </span><span class="nt">"restrictions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec eleifend purus, eu luctus leo. Fusce dapibus tincidunt est, quis bibendum erat consequat ac. Nam laoreet velit eget felis venenatis mollis. Suspendisse potenti. Ut eu ultrices dui."</span><span class="p">,</span><span class="w">
     </span><span class="nt">"disclaimer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec eleifend purus, eu luctus leo. Fusce dapibus tincidunt est, quis bibendum erat consequat ac. Nam laoreet velit eget felis venenatis mollis. Suspendisse potenti. Ut eu ultrices dui."</span><span class="p">,</span><span class="w">
     </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sponsor_image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"attachments/5459cfa9338e3560290cc22a29f252dd33a8e180/store/482d64cd2d71b7c71c8ee601bdd9e76ca840aacd04a5ef2b4fd2f733e50b/testlogo.jpg"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"divisions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w">
